@@ -90,3 +90,18 @@ export const baseDeDatos = [
     precio: 700,
   },
 ];
+
+export const dividircards = (size) => {
+  let productslist = [];
+  for (let i = 0; i < baseDeDatos.length; i += size) {
+    productslist.push(baseDeDatos.slice(i, i + size));
+  }
+  console.log(productslist);
+  return productslist;
+};
+
+export const appState = {
+  products: dividircards(4),
+  productsinit: dividircards(4).length,
+  productsindex: 0,
+};
